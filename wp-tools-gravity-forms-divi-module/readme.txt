@@ -3,9 +3,9 @@ Contributors: wpt00ls, freemius
 Donate link: https://wptools.app/
 Tags: divi, gravityforms, gravity forms, gravityforms divi, gravity forms divi, style gravityforms
 Requires at least: 4.5
-Tested up to: 6.6.1
+Tested up to: 6.6.2
 Requires PHP: 7.2.5
-Stable tag: 8.5.0
+Stable tag: 8.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -180,6 +180,9 @@ Plugin depends on
 2. Premium module features.
 
 == Changelog ==
+
+= 8.5.1 =
+* Updated: Freemius SDK
 
 = 8.5.0 =
 * Added: Support for "Orbital" theme in the divi builder and admin notice to inform user if default theme is set to orbital
