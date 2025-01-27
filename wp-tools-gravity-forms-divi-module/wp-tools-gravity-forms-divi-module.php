@@ -6,7 +6,7 @@
  * Author URI:      https://wptools.app
  * Text Domain:     wp-tools-gravity-forms-divi-module
  * Domain Path:     /languages
- * Version:         8.5.1
+ * Version:         8.5.2
  *
  * @package         Wp_Tools_Gravity_Divi_Module
  */
@@ -24,7 +24,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $loader = \WPT\DiviGravity\Loader::get_instance();
 
 $loader['name']    = 'WP Tools Gravity Forms Divi Module';
-$loader['version'] = '8.5.1';
+$loader['version'] = '8.5.2';
 $loader['dir']     = __DIR__;
 $loader['url']     = plugins_url( '/' . basename( __DIR__ ) );
 $loader['file']    = __FILE__;

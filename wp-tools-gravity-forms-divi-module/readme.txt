@@ -5,7 +5,7 @@ Tags: divi, gravityforms, gravity forms, gravityforms divi, gravity forms divi, 
 Requires at least: 4.5
 Tested up to: 6.6.2
 Requires PHP: 7.2.5
-Stable tag: 8.5.1
+Stable tag: 8.5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -180,6 +180,9 @@ Plugin depends on
 2. Premium module features.
 
 == Changelog ==
+
+= 8.5.2 =
+* Updated: Freemius SDK
 
 = 8.5.1 =
 * Updated: Freemius SDK
