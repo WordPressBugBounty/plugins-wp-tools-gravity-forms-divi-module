@@ -1,11 +1,11 @@
 === WP Tools Gravity Forms Divi Module ===
-Contributors: wpt00ls, freemius
+Contributors: wpt00ls
 Donate link: https://wptools.app/
 Tags: divi, gravityforms, gravity forms, gravityforms divi, gravity forms divi, style gravityforms
 Requires at least: 4.5
-Tested up to: 6.6.2
+Tested up to: 6.8
 Requires PHP: 7.2.5
-Stable tag: 8.5.2
+Stable tag: 8.5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -181,6 +181,9 @@ Plugin depends on
 
 == Changelog ==
 
+= 8.5.3 = 
+* Bug Fix: Issue with content description css
+
 = 8.5.2 =
 * Updated: Freemius SDK
 
@@ -288,6 +291,9 @@ Plugin depends on
 * Added compatibility for gravityforms-2.5_rc3
 
 = 6.2.0 =
+[//]: # fs_premium_only_begin
+* Added CSS ready classes gf_left_half, gf_left_third &gf_middle_third classes
+[//]: # fs_premium_only_end
 * Freemius SDK updated to 2.4.2
 
 = 6.0.1 =
@@ -314,6 +320,10 @@ Plugin depends on
 = 5.0.1 =
 * Moved freemius menu pages under Divi in admin.
 * Added plugin documentation in admin menu landing page.
+[//]: # fs_premium_only_begin
+* Removed `(Premium)` tags in the divi module. 
+* Inline form using `gf_simple_horizontal` form class were rendering incorrect on the visual builder. Fixed that.
+[//]: # fs_premium_only_end
 
 = 5.0.0 =
 * Free version for wordpress.org

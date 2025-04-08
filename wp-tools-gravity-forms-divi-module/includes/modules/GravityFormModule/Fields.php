@@ -110,7 +110,7 @@ class Fields {
                 'name'     => 'Consent Container',
             ],
             'consent_description'                     => [
-                'selector' => "{$this->module->main_css_element} div.gform_wrapper .gfield div.gfield_description.gfield_consent_description",
+                'selector' => "{$this->module->main_css_element} div.gform_wrapper .gfield div.gfield_description.gfield_consent_description, section%%order_class%%  .gform_wrapper .gfield div.ginput_container_consent label",
                 'name'     => 'Consent Description',
             ],
             'validation_error_container'              => [

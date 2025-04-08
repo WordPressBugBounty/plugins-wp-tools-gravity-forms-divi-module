@@ -1,0 +1,16 @@
+{
+    "name": "wpt00ls/wptools-hub",
+    "description": "Hub for WP Tools plugins",
+    "authors": [
+        {
+            "name": "WP Tools",
+            "email": "support@wptools.app"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "WPTools_Hub\\" : "src/"
+        }
+    },
+    "require": {}
+}
