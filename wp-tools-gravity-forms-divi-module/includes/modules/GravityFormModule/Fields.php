@@ -74,11 +74,11 @@ class Fields {
                 'name'     => 'Input Placeholder',
             ],
             'checkbox_radio_text'                     => [
-                'selector' => "{$this->module->main_css_element} .gform_wrapper div.ginput_container_checkbox .gfield_checkbox label, {$this->module->main_css_element} .gform_wrapper div.ginput_container_radio .gfield_radio label",
+                'selector' => "{$this->module->main_css_element} .gform_wrapper div.ginput_container_checkbox .gfield_checkbox label, {$this->module->main_css_element} .gform_wrapper div.ginput_container_radio .gfield_radio label, section%%order_class%% .gform_wrapper div.ginput_container_checkbox label",
                 'name'     => 'Button',
             ],
             'checked_checkbox_option_text'            => [
-                'selector' => '%%order_class%% .gform_wrapper div.ginput_container_checkbox .gfield-choice-input:checked + label',
+                'selector' => '%%order_class%% .gform_wrapper div.ginput_container_checkbox .gfield-choice-input:checked + label, section%%order_class%% .gform_wrapper div.ginput_container_checkbox input:checked + label',
                 'label'    => esc_html__( 'Checked Checkbox Text', 'wp-tools-gravity-forms-divi-module' ),
             ],
             'checked_radio_option_text'               => [
@@ -110,7 +110,7 @@ class Fields {
                 'name'     => 'Consent Container',
             ],
             'consent_description'                     => [
-                'selector' => "{$this->module->main_css_element} div.gform_wrapper .gfield div.gfield_description.gfield_consent_description, section%%order_class%%  .gform_wrapper .gfield div.ginput_container_consent label",
+                'selector' => "{$this->module->main_css_element} div.gform_wrapper .gfield div.gfield_description.gfield_consent_description",
                 'name'     => 'Consent Description',
             ],
             'validation_error_container'              => [
