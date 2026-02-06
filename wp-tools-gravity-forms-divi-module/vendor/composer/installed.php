@@ -3,7 +3,7 @@
         'name' => 'wpt00ls/wp-tools-gravity-forms-divi-module',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '981272e6dde361083c528309fc4e3e4887f747e4',
+        'reference' => '7c838286b7dbd56654a7db9202e9c964181cdb37',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -35,7 +35,7 @@
         'wpt00ls/wp-tools-gravity-forms-divi-module' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '981272e6dde361083c528309fc4e3e4887f747e4',
+            'reference' => '7c838286b7dbd56654a7db9202e9c964181cdb37',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

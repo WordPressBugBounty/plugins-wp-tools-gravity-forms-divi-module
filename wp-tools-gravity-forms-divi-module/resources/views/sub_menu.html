@@ -1,0 +1,524 @@
+<div class="wrap wpt-gf-divi-admin">
+	<style>
+		:root {
+			--wpt-primary: #2271b1;
+			--wpt-primary-dark: #135e96;
+			--wpt-bg-gray: #f0f0f1;
+			--wpt-text: #2c3338;
+			--wpt-text-light: #646970;
+			--wpt-white: #ffffff;
+			--wpt-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			--wpt-radius: 12px;
+		}
+
+		.wpt-gf-divi-admin {
+			max-width: 1100px;
+			margin: 30px auto;
+			color: var(--wpt-text);
+		}
+
+		.wpt-hero {
+			background: var(--wpt-white);
+			padding: 60px 40px;
+			border-radius: var(--wpt-radius);
+			box-shadow: var(--wpt-shadow);
+			text-align: center;
+			margin-bottom: 40px;
+			border-left: 6px solid var(--wpt-primary);
+		}
+
+		.wpt-hero h1 {
+			font-size: 2.8em;
+			font-weight: 800;
+			margin-bottom: 15px;
+			color: var(--wpt-text);
+		}
+
+		.wpt-hero p {
+			font-size: 1.25em;
+			line-height: 1.6;
+			color: var(--wpt-text-light);
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.wpt-section-header {
+			margin: 60px 0 30px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.wpt-section-header h2 {
+			font-size: 2em;
+			margin: 0;
+		}
+
+		.wpt-video-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+			gap: 25px;
+		}
+
+		.wpt-video-card {
+			background: var(--wpt-white);
+			border-radius: var(--wpt-radius);
+			box-shadow: var(--wpt-shadow);
+			overflow: hidden;
+			display: flex;
+			transition: all 0.3s ease;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.wpt-video-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+		}
+
+		.wpt-video-card:hover .wpt-video-thumb::after {
+			background: rgba(255, 0, 0, 0.9);
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+
+		.wpt-video-thumb {
+			flex: 0 0 190px;
+			background: #000;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.wpt-video-thumb img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0.85;
+			transition: opacity 0.3s;
+		}
+
+		.wpt-video-card:hover .wpt-video-thumb img {
+			opacity: 1;
+		}
+
+		.wpt-video-thumb::after {
+			content: "\f234";
+			font-family: dashicons;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: rgba(0, 0, 0, 0.7);
+			color: #fff;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			transition: all 0.3s ease;
+		}
+
+		.wpt-video-info {
+			padding: 24px;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.wpt-video-info h3 {
+			margin: 0 0 10px;
+			font-size: 1.25em;
+			line-height: 1.3;
+			font-weight: 600;
+			color: var(--wpt-text);
+		}
+
+		.wpt-video-info p {
+			margin: 0;
+			color: var(--wpt-text-light);
+			font-size: 0.95em;
+			line-height: 1.5;
+		}
+
+		/* Coming Soon */
+		.wpt-coming-soon {
+			margin-top: 50px;
+			background: linear-gradient(135deg, #f0f6fb 0%, #e0eaf3 100%);
+			border-radius: var(--wpt-radius);
+			padding: 50px;
+			text-align: center;
+			border: 2px dashed #a7aaad;
+		}
+
+		.wpt-coming-soon h2 {
+			font-size: 2.2em;
+			margin-top: 0;
+			color: var(--wpt-primary);
+		}
+
+		.wpt-badge {
+			display: inline-block;
+			background: #ffb900;
+			color: #000;
+			padding: 4px 12px;
+			border-radius: 20px;
+			font-size: 0.8em;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+
+		/* Upsell */
+		.wp-premium-cta-card {
+			margin: 60px 0;
+			background: var(--wpt-white);
+			border: 1px solid #e2e4e7;
+			border-radius: var(--wpt-radius);
+			padding: 40px;
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+		}
+
+		.wp-premium-icon {
+			background: #f0f6fb;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--wpt-primary);
+			flex-shrink: 0;
+		}
+
+		.wp-premium-icon .dashicons {
+			font-size: 40px;
+			width: 40px;
+			height: 40px;
+		}
+
+		.wp-premium-content {
+			flex: 1;
+		}
+
+		.wp-premium-content h3 {
+			margin: 0 0 10px;
+			font-size: 1.8em;
+			color: var(--wpt-text);
+		}
+
+		.wp-premium-content p {
+			margin: 0;
+			color: var(--wpt-text-light);
+			font-size: 1.1em;
+			line-height: 1.5;
+		}
+
+		.wp-premium-actions {
+			text-align: right;
+			min-width: 200px;
+		}
+
+		.wp-premium-button {
+			display: inline-block;
+			background: var(--wpt-primary);
+			color: #fff;
+			padding: 16px 32px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 1.1em;
+			transition: all 0.2s;
+		}
+
+		.wp-premium-button:hover {
+			background: var(--wpt-primary-dark);
+			color: #fff;
+			transform: scale(1.05);
+		}
+
+		.wp-premium-footer {
+			display: block;
+			margin-top: 12px;
+			font-size: 0.9em;
+			color: #8c8f94;
+		}
+
+		@media (max-width: 900px) {
+			.wpt-video-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.wp-premium-cta-card {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.wp-premium-actions {
+				text-align: center;
+			}
+
+			.wpt-video-card {
+				flex-direction: column;
+			}
+
+			.wpt-video-thumb {
+				flex: 0 0 250px;
+			}
+		}
+	</style>
+
+	<div class="wpt-hero">
+		<div class="wpt-badge">Divi 5 Compatible</div>
+		<h1>Style Gravity Forms in Divi</h1>
+		<p>Render and style your forms with pixel-perfect precision using our intuitive visual builder integration.</p>
+	</div>
+
+
+	<style>
+		.wpt-notification {
+			background: #f0f6fb;
+			border-left: 5px solid var(--wpt-primary);
+			padding: 30px;
+			margin: 40px 0;
+			border-radius: var(--wpt-radius);
+			box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+		}
+
+		.wpt-notification h2 {
+			margin: 0 0 10px;
+			font-size: 1.6em;
+			color: var(--wpt-text);
+		}
+
+		.wpt-notification p {
+			margin: 0;
+			font-size: 1.1em;
+			line-height: 1.6;
+			color: var(--wpt-text-light);
+		}
+	</style>
+
+	<blockquote class="wpt-notification">
+		<div class="wpt-badge">Divi 5</div>
+		<h2>Divi 5 Gravity Form Module (Default Theme)</h2>
+		<p>We are excited to announce we have released the beta version of the plugin for Divi 5 & will be releasing
+			the documentation shortly.</p>
+	</blockquote>
+
+	<div class="wpt-section-header">
+		<h2>Video Tutorials (Divi 4 - Default Theme)</h2>
+	</div>
+
+	<div class="wpt-video-grid">
+		<!-- Card 1 -->
+		<a href="https://www.youtube.com/watch?v=jwId9CUgxOc" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/jwId9CUgxOc/mqdefault.jpg" alt="Gravityform Shortcode Parameters">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Embed & Setup Gravity Form in Divi</h3>
+				<p>Learn how to use Gravity Forms shortcode parameters within the Divi module for advanced behavior.</p>
+			</div>
+		</a>
+
+		<!-- Card 2 -->
+		<a href="https://www.youtube.com/watch?v=Hg8fnxb4l5A" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/Hg8fnxb4l5A/mqdefault.jpg" alt="Background, Spacing & Border">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Background & Spacing 🔒</h3>
+				<p>Master the layout by customizing form backgrounds, internal spacing, and border styles.</p>
+			</div>
+		</a>
+
+		<!-- Card 3 -->
+		<a href="https://www.youtube.com/watch?v=Tl88W1U2Uzg" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/Tl88W1U2Uzg/mqdefault.jpg" alt="Form Title">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Style Form Title 🔒</h3>
+				<p>Make your form titles stand out with typography controls and custom styling options.</p>
+			</div>
+		</a>
+
+		<!-- Card 4 -->
+		<a href="https://www.youtube.com/watch?v=Iy_JBVdFJSQ" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/Iy_JBVdFJSQ/mqdefault.jpg" alt="Form Description">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Form Description 🔒</h3>
+				<p>Customize the appearance of form descriptions to match your website's design language.</p>
+			</div>
+		</a>
+
+		<!-- Card 5 -->
+		<a href="https://www.youtube.com/watch?v=xJLCScsdg3o" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/xJLCScsdg3o/mqdefault.jpg" alt="Section Break Field">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Section Breaks 🔒</h3>
+				<p>Organize long forms beautifully by styling section breaks and dividers.</p>
+			</div>
+		</a>
+
+		<!-- Card 6 -->
+		<a href="https://www.youtube.com/watch?v=9Lsyn7Wdhdc" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/9Lsyn7Wdhdc/mqdefault.jpg" alt="Input Fields">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Input Field Styling 🔒</h3>
+				<p>Complete control over input wrappers, placeholders, and interactive field states.</p>
+			</div>
+		</a>
+
+		<!-- Card 7 -->
+		<a href="https://www.youtube.com/watch?v=XFxkwGRRE4c" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/XFxkwGRRE4c/mqdefault.jpg" alt="Labels and Sub-labels">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Labels & Descriptions 🔒</h3>
+				<p>Tweak labels, sub-labels, and field descriptions for maximum readability.</p>
+			</div>
+		</a>
+
+		<!-- Card 8 -->
+		<a href="https://www.youtube.com/watch?v=XGhikyjuNBM" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/XGhikyjuNBM/mqdefault.jpg" alt="Field Wrapper">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Field Wrappers 🔒</h3>
+				<p>Customize the container of each field to create unique row and column layouts.</p>
+			</div>
+		</a>
+
+		<!-- Card 9 -->
+		<a href="https://www.youtube.com/watch?v=CUBm1jCkKj0" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/CUBm1jCkKj0/mqdefault.jpg" alt="Validation Errors">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Error Messaging 🔒</h3>
+				<p>Design user-friendly validation and form-level error messages that look professional.</p>
+			</div>
+		</a>
+
+		<!-- Card 10 -->
+		<a href="https://www.youtube.com/watch?v=Vk_uk-J-uz4" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/Vk_uk-J-uz4/mqdefault.jpg" alt="Confirmation Message">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Confirmation States 🔒</h3>
+				<p>Style the success messages that appear after a user successfully submits a form.</p>
+			</div>
+		</a>
+
+		<!-- Card 11 -->
+		<a href="https://www.youtube.com/watch?v=F7fNxHWb5RQ" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/F7fNxHWb5RQ/mqdefault.jpg" alt="Submit Button">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Button Styling 🔒</h3>
+				<p>Transform the standard Gravity Forms button into a high-converting Divi-style CTA.</p>
+			</div>
+		</a>
+
+		<!-- Card 12 -->
+		<a href="https://www.youtube.com/watch?v=tFia_Ud54Ws" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/tFia_Ud54Ws/mqdefault.jpg" alt="Consent Field & Description">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Consent Fields 🔒</h3>
+				<p>Learn how to style GDPR-compliant consent fields and descriptions for trust and clarity.</p>
+			</div>
+		</a>
+
+		<!-- Card 13 -->
+		<a href="https://www.youtube.com/watch?v=kbwzORqnWE8" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/kbwzORqnWE8/mqdefault.jpg" alt="Gravityform Footer">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Form Footer Padding 🔒</h3>
+				<p>Fine-tune the spacing and background of the form footer area for a polished look.</p>
+			</div>
+		</a>
+
+		<!-- Card 14 -->
+		<a href="https://www.youtube.com/watch?v=66DP_JBjGas" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/66DP_JBjGas/mqdefault.jpg" alt="Progress Bar">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Progress Bars 🔒</h3>
+				<p>Make multi-page forms engaging by styling the progress indicators and steps.</p>
+			</div>
+		</a>
+
+		<!-- Card 15 -->
+		<a href="https://www.youtube.com/watch?v=ly4WiUtYcD8" target="_blank" class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<img src="https://img.youtube.com/vi/ly4WiUtYcD8/mqdefault.jpg" alt="Custom CSS">
+			</div>
+			<div class="wpt-video-info">
+				<h3>Custom CSS Settings 🔒</h3>
+				<p>For power users: how to leverage our custom CSS settings for unlimited flexibility.</p>
+			</div>
+		</a>
+
+		<!-- Card 16 -->
+		<a href="https://wptools.app/wordpress-plugin/gravity-forms-divi-module/#docs" target="_blank"
+			class="wpt-video-card">
+			<div class="wpt-video-thumb">
+				<div
+					style="background: #f0f0f1; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+					<span class="dashicons dashicons-plus-alt2"
+						style="font-size: 48px; width: 48px; height: 48px; color: #999;"></span>
+				</div>
+			</div>
+			<div class="wpt-video-info">
+				<h3>And more... 🔒</h3>
+				<p>Explore our full documentation and video library for more advanced styling techniques.</p>
+			</div>
+		</a>
+
+	</div>
+
+	<div class="wpt-coming-soon">
+		<div class="wpt-badge">Roadmap</div>
+		<h2>Orbital Theme Support</h2>
+		<p>Once we have addressed the initial Divi 5 beta issues and a stable version of divi 5 is released, we will
+			begin
+			development on full support for the new <strong>Orbital Gravity Forms Theme</strong>.</p>
+	</div>
+
+	<!-- CTA Section -->
+	<div class="wp-premium-cta-card">
+		<div class="wp-premium-icon">
+			<span class="dashicons dashicons-star-filled"></span>
+		</div>
+		<div class="wp-premium-content">
+			<h3>Upgrade to Premium</h3>
+			<p>Get access to advanced styling controls, and priority support to take your forms to the next level.</p>
+			<span class="wp-premium-footer">7-Day Free Trial • No Credit Card Required • Instant Activation</span>
+		</div>
+		<div class="wp-premium-actions">
+			<a href="https://wptools.app/wordpress-plugin/gravity-forms-divi-module/?utm_source=divi-module&utm_medium=page&utm_campaign=gf-divi&utm_content=free#pricing"
+				class="wp-premium-button" target="_blank" rel="noreferrer">Upgrade to Premium</a>
+		</div>
+	</div>
+</div>

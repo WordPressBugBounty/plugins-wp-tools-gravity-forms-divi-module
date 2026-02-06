@@ -30,9 +30,14 @@ class Divi {
      * Enqueue assets for divi modules
      */
     public function enqueue_divi_module_assets() {
-        if ( isset( $_GET['et_fb'] ) and $_GET['et_fb'] == '1' ) {
+        if ( isset( $_GET['et_fb'] ) && $_GET['et_fb'] == '1' ) {
+            // phpcs:ignore
             $this->enqueue_et_pb_wpt_gravityform_assets();
         }
+    }
+
+    public function is_divi5_theme() {
+        return function_exists( '\\et_builder_d5_enabled' );
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 namespace WPT\DiviGravity\WP;
 
 /**
@@ -11,7 +12,7 @@ class Admin
     /**
      * Constructor.
      */
-    public function __construct( $container )
+    public function __construct($container)
     {
         $this->container = $container;
     }
@@ -21,13 +22,13 @@ class Admin
      */
     public function default_theme_notice()
     {
-        $theme_slug = get_option( 'rg_gforms_default_theme', 'gravity-theme' );
+        $theme_slug = get_option('rg_gforms_default_theme', 'gravity-theme');
 
-        if ( 'gravity-theme' === $theme_slug || get_user_meta( get_current_user_id(), 'wpt_divi_gf_default_theme_check', true ) ) {
+        if ('gravity-theme' === $theme_slug || get_user_meta(get_current_user_id(), 'wpt_divi_gf_default_theme_check', true)) {
             return;
         }
 
-        $gf_settings_page = sprintf( '<a href="%s">Gravity Forms Settings</a>', admin_url( 'admin.php?page=gf_settings' ) );
+        $gf_settings_page = sprintf('<a href="%s">Gravity Forms Settings</a>', admin_url('admin.php?page=gf_settings'));
 
         echo '<div class="notice notice-warning is-dismissible" data-notice="wpt_divi_gf_default_theme_check_notice">
         <p>
@@ -40,7 +41,10 @@ class Admin
             To switch to the "Gravity Forms 2.5 Theme," please follow this tutorial:
             <a href="https://youtu.be/59yvsReHgBc" target="_blank">Watch Video</a>.
         </p>
-        <p><b>Note:</b> Your current gravity forms theme is <b>"' . $theme_slug . '"</b>. To change the setting visit ' . $gf_settings_page . '</p>
+        <p><b>Note:</b> Your current gravity forms theme is <b>"' . esc_attr($theme_slug) . '"</b>. To change the setting visit ';
+
+        echo $gf_settings_page; // phpcs:ignore
+        echo '</p>;
     </div>';
     }
 
@@ -60,7 +64,7 @@ class Admin
             'wpt-divi-gf-admin-notice',
             'wptGfDiviAjax',
             [
-                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'ajax_url' => admin_url('admin-ajax.php'),
             ]
         );
     }
@@ -70,8 +74,7 @@ class Admin
      */
     function ajax_wpt_divi_gf_default_theme_check_notice()
     {
-        update_user_meta( get_current_user_id(), 'wpt_divi_gf_default_theme_check', 1 );
+        update_user_meta(get_current_user_id(), 'wpt_divi_gf_default_theme_check', 1);
         wp_send_json_success();
     }
-
 }

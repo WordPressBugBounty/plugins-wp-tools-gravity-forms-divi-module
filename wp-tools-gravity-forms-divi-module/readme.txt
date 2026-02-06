@@ -1,16 +1,16 @@
-=== WP Tools Gravity Forms Divi Module ===
+=== Divi Gravity Forms (WP Tools) ===
 Contributors: wpt00ls, freemius
 Donate link: https://wptools.app/
-Tags: divi, gravityforms, gravity forms, gravityforms divi, gravity forms divi, style gravityforms
+Tags: divi5, divi, gravityforms, gravity forms, gravityforms divi
 Requires at least: 4.5
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.2.5
-Stable tag: 8.5.4
+Stable tag: 9.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
-A versatile divi module to integrate gravity forms with divi theme builder. Create custom-designed forms for your website using wide-range of style customization options. No programming experience needed.
+Divi 4 & 5 module to integrate Gravity Forms. Create custom-designed forms for your website using extensive style customization options, no coding needed.
 
 == Description ==
 
@@ -160,7 +160,7 @@ A fine-grained control over writing custom css for large number of form elements
 
 == Installation ==
 
-How to install the `WP Tools Gravity Forms Divi Module` plugin and get it working.
+How to install the `Divi Gravity Forms (WP Tools)` plugin and get it working.
 
 1. Upload `plugin-name.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -181,8 +181,11 @@ Plugin depends on
 
 == Changelog ==
 
-= 8.5.4 = 
-* Weird fatal error fix
+= 9.1.0 =
+* Updated: Styling for divi 5 module
+
+= 9.0.0 =
+* Added: Divi 5 integration with backward compatibility
 
 = 8.5.3 = 
 * Bug Fix: Issue with content description css
